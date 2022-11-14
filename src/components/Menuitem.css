@@ -1,0 +1,17 @@
+.menu__item{
+    transition: 400ms ease;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.menu__item:hover{
+    background-color: rgba(128, 128, 128, 0.103);
+}
+
+.menu__item > h4{
+    color: black;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: capitalize;
+}
