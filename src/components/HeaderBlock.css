@@ -1,0 +1,40 @@
+.headerBlock {
+  height: 100vh;
+  background: url("https://tesla-cdn.thron.com/delivery/public/image/tesla/8e2df1b9-a4bf-4eb9-beec-2cf5cc77fca0/bvlatuR/std/0x0/8e2df1b9-a4bf-4eb9-beec-2cf5cc77fca0")
+    no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: grid;
+  place-items: center;
+}
+
+.headerBlock__info{
+    display: flex;
+    flex-direction: column;
+    height: 650px;
+}
+
+.headerBlock__info--text{
+    text-align: center;
+    flex: 1;
+}
+
+.headerBlock__info--text > h1{
+    font-size: 42px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    color: #393c41
+}
+
+.headerBlock__info--text > h4{
+    font-size: 16px;
+font-weight: 400;
+color: #5c5e62
+}

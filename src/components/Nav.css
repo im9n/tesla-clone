@@ -37,7 +37,7 @@ nav{
 
 .nav__links > a:hover,
 .nav__right > a:hover{
-    background-color: rgba(128, 128, 128, 0.103);
+    background-color: var(--hoverColor);
 }
 
 .nav__right{

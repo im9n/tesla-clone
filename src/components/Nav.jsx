@@ -28,7 +28,6 @@ const Nav = ({ menuOpen, setMenuOpen }) => {
         <Link to="/">Account</Link>
         <a onClick={() => setMenuOpen(!menuOpen)}>Menu</a>
       </div>
-      {menuOpen && (<Menu />)}
     </nav>
   );
 };

@@ -1,11 +1,15 @@
-
 import React from "react";
-import './Menu.css'
+import "./Menu.css";
 import Menuitem from "./Menuitem";
+import CloseIcon from "@mui/icons-material/Close";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
-const Menu = () => {
+const Menu = ({ menuOpen, setMenuOpen }) => {
   return (
-    <div className="menu">
+    <div className="menu"  data-aos='fade-left'>
+      <CloseIcon onClick={() => setMenuOpen(!menuOpen)}/>
       <Menuitem title="existing inventory" />
       <Menuitem title="used inventory" />
       <Menuitem title="trade-in" />
