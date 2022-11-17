@@ -1,6 +1,6 @@
 nav{
     display: flex;
-    position: sticky;
+    position: fixed;
     z-index: 2;
     top: 0;
     left: 0;
@@ -18,20 +18,20 @@ nav{
 
 .nav__links{
     display: flex;
-    gap: 12px;
+    gap: 8px;
 }
 
 .nav__links > a,
 .nav__right > a{
     text-decoration: none;
-    color: black;
+    color: #171a20;
     height: fit-content;
     padding: 6px 16px;
     transition: 400ms ease;
     background-color: transparent;
     border-radius: 4px;
     font-weight: 500;
-    font-size: 16px;
+    font-size: 15px;
     cursor: pointer;
 }
 
