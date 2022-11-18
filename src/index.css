@@ -1,16 +1,22 @@
-@import url('https://fonts.cdnfonts.com/css/gotham');
+@import url("https://fonts.cdnfonts.com/css/gotham");
 
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-:root {
---hoverColor: rgba(128, 128, 128, 0.103);
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+  transition: background-color 600000s 0s, color 600000s 0s;
 }
 
-html, body{
+:root {
+  --hoverColor: rgba(110, 110, 110, 0.212);
+}
+
+html,
+body {
   max-width: 100%;
   height: 100vh;
   scroll-snap-type: y;
@@ -18,14 +24,14 @@ html, body{
 
 body {
   margin: 0;
-  font-family: 'Gotham', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: "Gotham", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }

@@ -33,8 +33,10 @@ const HeaderBlock = ({ model, caption, button1, button2, imageUrl, id }) => {
       <div
         className={`headerBlock__info`}
         style={{
-          opacity:
-            (scrollPosition > closeHeight || scrollPosition < openHeight) && 0,
+          visibility:
+            (scrollPosition > closeHeight || scrollPosition < openHeight) && 'hidden',
+          opacity: 
+          (scrollPosition > closeHeight || scrollPosition < openHeight) && 0,
         }}
         data-aos="fade-in"
       >

@@ -1,46 +1,82 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import LanguageIcon from "@mui/icons-material/Language";
 import { useForm } from "react-hook-form";
 import "./Login.css";
+import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
+import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
 import ButtonPrimary from "../components/ButtonPrimary";
+import ButtonSecondary from "../components/ButtonSecondary";
+import auth from "../firebase";
+import { useDispatch } from "react-redux";
+import { login } from "../features/userSlice";
+import MinimalNav from "../components/minimalNav";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
+  const [passwordShow, setPasswordShow] = useState(false);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  function signIn(){
-    
+  function onSubmit(data) {
+    auth
+      .signInWithEmailAndPassword(data.email, data.password)
+      .then((userAuth) => {
+        dispatch(
+          login({
+            email: userAuth.user.email,
+            displayName: userAuth.user.displayName,
+            uid: userAuth.user.id,
+          })
+        );
+
+        navigate("/teslaaccount");
+      })
+      .catch((error) => alert(error.message));
   }
 
   return (
     <div className="login">
-      <div className="login__nav">
-        <div className="login__logo">
-          <Link to="/">
-            <img
-              className="login__logo--img"
-              src="https://assets.website-files.com/5e8fceb1c9af5c3915ec97a0/5ec2f037975ed372da9f6286_Tesla-Logo-PNG-HD.png"
-              alt=""
-            />
-          </Link>
-        </div>
-        <div className="login__language">
-          <LanguageIcon />
-          <span>en-AU</span>
-        </div>
-        <div className="login__info">
-          <form>
-            <div className="login__info--email">
-                <p className="login__info--label">Email Address</p>
-                <input type="email" className="login__info--input" />
+      <MinimalNav />
+      <div className="login__info">
+        <h1>Sign In</h1>
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <div className="login__info--email">
+            <p className="login__info--label">Email Address</p>
+            <div className="login__info--wrapper">
+              <input
+                type="email"
+                className="login__info--input"
+                {...register("email", { required: "Required" })}
+              />
             </div>
-            <div className="login__info--password">
-                <p className="login__info--label">Password</p>
-                <input type="password" className="login__info--input" />
+          </div>
+          <div className="login__info--password">
+            <p className="login__info--label">Password</p>
+            <div className="login__info--wrapper">
+              <input
+                type={passwordShow ? "text" : "password"}
+                className="login__info--input"
+                {...register("password", { required: "Required" })}
+                autoComplete="off"
+              />
+              {passwordShow ? (
+                <VisibilityOffOutlinedIcon
+                  onClick={() => setPasswordShow(!passwordShow)}
+                />
+              ) : (
+                <VisibilityOutlinedIcon
+                  onClick={() => setPasswordShow(!passwordShow)}
+                />
+              )}
             </div>
-            <ButtonPrimary name='Sign In' type='submit' onClick={signIn}/>
-          </form>
-        </div>
+          </div>
+          <ButtonPrimary text={"sign in"} />
+        </form>
+        <span className="login__divider">Or</span>
+        <Link to="/">
+          <ButtonSecondary text={"create account"} />
+        </Link>
       </div>
     </div>
   );

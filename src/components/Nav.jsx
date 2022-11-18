@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Menu from "./Menu";
 import "./Nav.css";
 
 const Nav = ({ menuOpen, setMenuOpen }) => {
@@ -25,7 +24,7 @@ const Nav = ({ menuOpen, setMenuOpen }) => {
       </div>
       <div className="nav__right">
         <Link to="/">Shop</Link>
-        <Link to="/">Account</Link>
+        <Link to="/login">Account</Link>
         <a onClick={() => setMenuOpen(!menuOpen)}>Menu</a>
       </div>
     </nav>

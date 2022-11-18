@@ -1,0 +1,35 @@
+.minimalNav {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 40px;
+  }
+  
+  .minimalNav__logo {
+    object-fit: contain;
+    width: 120px;
+    padding: 8px;
+  }
+  
+  .minimalNav__logo--img {
+    width: 100%;
+  }
+  
+  .minimalNav__language {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 400ms ease;
+    padding: 8px;
+    border-radius: 12px;
+  }
+  
+  .minimalNav__language:hover {
+    background-color: var(--hoverColor);
+  }
+  
+  .minimalNav__language > span {
+    font-weight: 500;
+    color: rgb(57, 60, 65);
+  }
+  

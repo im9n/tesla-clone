@@ -1,0 +1,17 @@
+.buttonSecondary{
+    font-weight: 600;
+    font-size: 13px;
+    width: 100%;
+    border-radius: 40px;
+    text-transform: uppercase;
+    border: 2px black solid;
+    height: 40px;
+    cursor: pointer;
+    background-color: transparent;
+    transition: 400ms ease;
+}
+
+.buttonSecondary:hover{
+    background-color: #000;
+    color: white;
+}
