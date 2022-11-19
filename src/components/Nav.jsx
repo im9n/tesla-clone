@@ -23,7 +23,7 @@ const Nav = ({ menuOpen, setMenuOpen }) => {
         <Link to="/">Powerwall</Link>
       </div>
       <div className="nav__right">
-        <Link to="/">Shop</Link>
+        <Link to="https://shop.tesla.com/">Shop</Link>
         <Link to="/login">Account</Link>
         <a onClick={() => setMenuOpen(!menuOpen)}>Menu</a>
       </div>

@@ -74,7 +74,7 @@ const Login = () => {
           <ButtonPrimary text={"sign in"} />
         </form>
         <span className="login__divider">Or</span>
-        <Link to="/">
+        <Link to="/register">
           <ButtonSecondary text={"create account"} />
         </Link>
       </div>

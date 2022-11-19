@@ -1,0 +1,89 @@
+.register {
+  display: grid;
+  place-items: center;
+}
+.register__info {
+  margin-top: 36px;
+}
+
+.register__info > h1 {
+  font-size: 36px;
+  font-weight: 500;
+  margin-bottom: 40px;
+  margin-left: -60px;
+}
+
+.register__info--firstName,
+.register__info--lastName,
+.register__info--email {
+  margin-bottom: 20px;
+}
+
+.register__info--password {
+  margin-bottom: 28px;
+}
+
+.register__info--label {
+  font-size: 15px;
+  margin-left: 16px;
+  font-weight: 500;
+  color: rgb(92, 93, 97);
+  margin-bottom: 8px;
+}
+
+.register__info--wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 320px;
+  height: 40px;
+  padding: 16px;
+  border-radius: 40px;
+  background-color: #f4f4f4;
+  border: 1px #f4f4f4 solid;
+  transition: 400ms ease;
+}
+
+.register__info--wrapper > .MuiSvgIcon-root {
+  cursor: pointer;
+  color: rgb(57, 60, 65);
+}
+
+.register__info--input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  flex: 1;
+  height: 40px;
+  font-size: 15px;
+  font-weight: 600;
+  color: rgb(57, 60, 65);
+}
+
+.register__info--wrapper:focus-within {
+  border-color: #d6d6d7;
+}
+
+.register__divider {
+  text-transform: uppercase;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: rgb(92, 93, 97);
+  margin-bottom: 52px;
+}
+
+.register__divider::before,
+.register__divider::after {
+  content: "";
+  width: 45%;
+  height: 1px;
+  margin: 0 8px;
+  background-color: rgb(226, 228, 228);
+}
+
+.register__info > a > button{
+    margin-bottom: 80px;
+}

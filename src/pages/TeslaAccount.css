@@ -1,0 +1,107 @@
+.account {
+  padding: 80px 0;
+}
+
+.account__info {
+  display: flex;
+  align-items: center;
+}
+
+.account__sidebar {
+  width: 300px;
+  height: 550px;
+  padding-left: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-right: 52px;
+}
+
+.account__content {
+  flex: 1;
+  padding-top: 40px;
+}
+
+.account__content > h1 {
+  font-weight: 500;
+  font-size: 36px;
+  margin-bottom: 32px;
+}
+
+.account__content--item {
+  height: 240px;
+  max-width: 320px;
+  border: 1px #d0d1d2 solid;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.account__content--item:first-child{
+    margin-bottom: 24px;
+}
+
+.account__content--img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.account__content--img > img {
+  height: 100%;
+  width: 100%;
+}
+
+.account__content--text {
+  display: flex;
+  flex-direction: column;
+  padding-left: 16px;
+  padding-bottom: 16px;
+  padding-right: 16px;
+  padding-top: 8px;
+}
+
+.account__content--text > p,
+.account__content--text > span,
+.account__content--text > a {
+font-size: 13px;
+}
+
+.account__content--text > p {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.account__content--text > span {
+  margin-bottom: 12px;
+}
+
+.account__content--text > a{
+    width: fit-content;
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 1px #000 solid;
+    transition: 200ms ease;
+}
+
+.account__content--text > a:hover{
+border-bottom: 2px #000 solid;
+}
+
+.account__content--text > a:active{
+color: #000
+}
+
+.flex-row{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.flex-row > p{
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    max-width: 180px;
+}
+
+

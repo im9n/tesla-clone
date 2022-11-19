@@ -6,6 +6,7 @@ import { selectUser } from "./features/userSlice";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import TeslaAccount from "./pages/TeslaAccount";
 
 function App() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -17,6 +18,7 @@ function App() {
         <Route path="/" exact element={<Home menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>} />
         <Route path="/login" element={user ? (<Navigate to='/teslaaccount'/>) : <Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/teslaaccount" element={<TeslaAccount menuOpen={menuOpen} setMenuOpen={setMenuOpen}/>}/>
       </Routes>
     </Router>
   );

@@ -22,6 +22,7 @@
     transition: 400ms ease;
     padding: 8px;
     border-radius: 12px;
+    cursor: not-allowed
   }
   
   .minimalNav__language:hover {
