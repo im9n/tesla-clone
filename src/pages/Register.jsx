@@ -18,22 +18,26 @@ const Register = () => {
   const dispatch = useDispatch();
 
   async function onSubmit(data) {
-    const userAuth = await auth.createUserWithEmailAndPassword(data.email, data.password)
-   
-    await userAuth.user.updateProfile({
-      displayName: data.firstName
-    })
+    try {
+      const userAuth = await auth.createUserWithEmailAndPassword(
+        data.email,
+        data.password
+      );
 
-    try{
-     dispatch(login({
-      email: userAuth.user.email,
-      uid: userAuth.user.uid,
-      displayName: data.firstName,
-     }))
-     navigate('/teslaaccount')
-    }
-    catch(e){
-      alert(e.message)
+      await userAuth.user.updateProfile({
+        displayName: data.firstName + " " + data.lastName,
+      });
+
+      dispatch(
+        login({
+          email: userAuth.user.email,
+          uid: userAuth.user.uid,
+          displayName: data.firstName + " " + data.lastName,
+        })
+      );
+      navigate("/teslaaccount");
+    } catch (e) {
+      alert(e.message);
     }
   }
 

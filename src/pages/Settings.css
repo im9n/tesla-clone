@@ -1,0 +1,101 @@
+.settings {
+  padding: 80px 0;
+}
+
+.settings__info {
+  display: flex;
+  align-items: flex-start;
+  padding: 0 80px;
+}
+
+.settings__sidebar {
+  margin-top: 33px;
+  width: 300px;
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin-right: 52px;
+}
+
+.settings__content {
+  flex: 1;
+  padding-top: 40px;
+}
+
+.settings__content > h1 {
+  font-weight: 500;
+  font-size: 36px;
+  margin-bottom: 44px;
+}
+
+.settings__content > h2 {
+  margin-bottom: 44px;
+  font-weight: 500;
+}
+
+.settings__content--wrapper {
+  display: flex;
+  margin-bottom: 52px;
+  max-width: 900px;
+}
+
+.settings__content--item{
+    width: 100%;
+}
+
+.settings__content--item > h4{
+    color: #5c5e62;
+    font-weight: 500;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.settings__content--item > p{
+    color: #171a20;
+    font-weight: 400;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.settings__content--item > span,
+.settings__delete {
+    color: #393c41;
+    font-size: 14px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #393c41;
+    transition: 200ms ease;
+    cursor: pointer;
+}
+
+.settings__content--item > span:hover,
+.settings__delete:hover{
+  border-bottom: 2px solid #393c41
+}
+
+.settings__content--password{
+    font-weight: bold !important;
+}
+
+.settings__content--add{
+    display: flex;
+    align-items: center;
+}
+
+.settings__content--add > span{
+   font-size: 15px;
+}
+
+.settings__content--add > .MuiSvgIcon-root{
+    background-color: #eee;
+    border-radius: 50%;
+    margin-right: 12px;
+    cursor: pointer;
+}
+
+.settings__delete{
+    font-size: 16px;
+    width: fit-content
+}
+

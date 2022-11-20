@@ -1,9 +1,9 @@
 import React from "react";
 import "./SidebarItem.css";
 
-const SidebarItem = ({ text, icon, onClick, selected }) => {
+const SidebarItem = ({ text, icon, cursor, selected, onClick }) => {
   return (
-    <div className={`account__sidebar--item ${!onClick && 'not-allowed'}`}>
+    <div className={`account__sidebar--item ${!cursor && 'not-allowed'}`}>
       <div
         className="account__sidebar--icon"
         style={{
