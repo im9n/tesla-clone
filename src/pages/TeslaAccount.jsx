@@ -28,7 +28,7 @@ const TeslaAccount = ({ menuOpen, setMenuOpen }) => {
       )}
       <div className="account__info">
         <div className="account__sidebar">
-          <SidebarItem text="dashboard" icon={<HomeOutlinedIcon />} selected />
+          <SidebarItem text="dashboard" icon={<HomeOutlinedIcon />} selected cursor/>
           <Link to='/teslaaccount/settings' style={{textDecoration: 'none'}}>
           <SidebarItem
             text="profile settings"

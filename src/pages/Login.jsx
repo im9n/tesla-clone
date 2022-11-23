@@ -7,7 +7,7 @@ import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined";
 import ButtonPrimary from "../components/ButtonPrimary";
 import ButtonSecondary from "../components/ButtonSecondary";
-import auth from "../firebase";
+import { auth } from "../firebase";
 import { useDispatch } from "react-redux";
 import { login } from "../features/userSlice";
 import MinimalNav from "../components/minimalNav";
@@ -25,6 +25,7 @@ const Login = () => {
         dispatch(
           login({
             email: userAuth.user.email,
+            password: data.password,
             displayName: userAuth.user.displayName,
             uid: userAuth.user.id,
           })

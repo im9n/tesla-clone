@@ -7,7 +7,7 @@ import ButtonPrimary from "../components/ButtonPrimary";
 import ButtonSecondary from "../components/ButtonSecondary";
 import { useForm } from "react-hook-form";
 import "./Register.css";
-import auth from "../firebase";
+import { auth } from "../firebase";
 import { login } from "../features/userSlice";
 import { useDispatch } from "react-redux";
 
@@ -31,6 +31,7 @@ const Register = () => {
       dispatch(
         login({
           email: userAuth.user.email,
+          password: data.password,
           uid: userAuth.user.uid,
           displayName: data.firstName + " " + data.lastName,
         })
