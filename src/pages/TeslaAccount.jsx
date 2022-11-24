@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Menu from "../components/Menu";
 import Nav from "../components/Nav";
@@ -11,10 +11,10 @@ import BoltOutlinedIcon from "@mui/icons-material/BoltOutlined";
 import { IoShirtOutline } from "react-icons/io5";
 import { BsBoxArrowRight } from "react-icons/bs";
 
-
 const TeslaAccount = ({ menuOpen, setMenuOpen }) => {
-  function signOut(){
-    console.log('signed out')
+
+  function signOut() {
+    console.log("signed out");
   }
 
   return (
@@ -28,13 +28,18 @@ const TeslaAccount = ({ menuOpen, setMenuOpen }) => {
       )}
       <div className="account__info">
         <div className="account__sidebar">
-          <SidebarItem text="dashboard" icon={<HomeOutlinedIcon />} selected cursor/>
-          <Link to='/teslaaccount/settings' style={{textDecoration: 'none'}}>
           <SidebarItem
-            text="profile settings"
-            icon={<PersonOutlineOutlinedIcon />}
+            text="dashboard"
+            icon={<HomeOutlinedIcon />}
+            selected
             cursor
           />
+          <Link to="/teslaaccount/settings" style={{ textDecoration: "none" }}>
+            <SidebarItem
+              text="profile settings"
+              icon={<PersonOutlineOutlinedIcon />}
+              cursor
+            />
           </Link>
           <SidebarItem
             text="payment method"
@@ -42,7 +47,12 @@ const TeslaAccount = ({ menuOpen, setMenuOpen }) => {
           />
           <SidebarItem text="charging" icon={<BoltOutlinedIcon />} />
           <SidebarItem text="order history" icon={<IoShirtOutline />} />
-          <SidebarItem text="sign out" icon={<BsBoxArrowRight />} cursor onClick={signOut}/>
+          <SidebarItem
+            text="sign out"
+            icon={<BsBoxArrowRight />}
+            cursor
+            onClick={signOut}
+          />
         </div>
         <div className="account__content">
           <h1>Dashboard</h1>
@@ -69,7 +79,9 @@ const TeslaAccount = ({ menuOpen, setMenuOpen }) => {
               </figure>
               <div className="account__content--text flex-row">
                 <p>Purchased a car from a third party?</p>
-                <a className="not-allowed" href="#">Add</a>
+                <a className="not-allowed" href="#">
+                  Add
+                </a>
               </div>
             </div>
           </div>

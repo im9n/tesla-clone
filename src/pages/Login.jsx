@@ -11,14 +11,17 @@ import { auth } from "../firebase";
 import { useDispatch } from "react-redux";
 import { login } from "../features/userSlice";
 import MinimalNav from "../components/minimalNav";
+import Loading from "../components/Loading";
 
 const Login = () => {
   const { register, handleSubmit } = useForm();
   const [passwordShow, setPasswordShow] = useState(false);
+  const [loading, setLoading] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   function onSubmit(data) {
+    setLoading(true);
     auth
       .signInWithEmailAndPassword(data.email, data.password)
       .then((userAuth) => {
@@ -30,56 +33,62 @@ const Login = () => {
             uid: userAuth.user.id,
           })
         );
-
         navigate("/teslaaccount");
+        setLoading(false);
       })
-      .catch((error) => alert(error.message));
+      .catch((error) => {
+        setLoading(false);
+        alert(error.message);
+      });
   }
 
   return (
-    <div className="login">
-      <MinimalNav />
-      <div className="login__info">
-        <h1>Sign In</h1>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="login__info--email">
-            <p className="login__info--label">Email Address</p>
-            <div className="login__info--wrapper">
-              <input
-                type="email"
-                className="login__info--input"
-                {...register("email", { required: "Required" })}
-              />
-            </div>
-          </div>
-          <div className="login__info--password">
-            <p className="login__info--label">Password</p>
-            <div className="login__info--wrapper">
-              <input
-                type={passwordShow ? "text" : "password"}
-                className="login__info--input"
-                {...register("password", { required: "Required" })}
-                autoComplete="off"
-              />
-              {passwordShow ? (
-                <VisibilityOffOutlinedIcon
-                  onClick={() => setPasswordShow(!passwordShow)}
+    <>
+      {loading && <Loading />}
+      <div className="login">
+        <MinimalNav />
+        <div className="login__info">
+          <h1>Sign In</h1>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="login__info--email">
+              <p className="login__info--label">Email Address</p>
+              <div className="login__info--wrapper">
+                <input
+                  type="email"
+                  className="login__info--input"
+                  {...register("email", { required: "Required" })}
                 />
-              ) : (
-                <VisibilityOutlinedIcon
-                  onClick={() => setPasswordShow(!passwordShow)}
-                />
-              )}
+              </div>
             </div>
-          </div>
-          <ButtonPrimary text={"sign in"} />
-        </form>
-        <span className="login__divider">Or</span>
-        <Link to="/register">
-          <ButtonSecondary text={"create account"} />
-        </Link>
+            <div className="login__info--password">
+              <p className="login__info--label">Password</p>
+              <div className="login__info--wrapper">
+                <input
+                  type={passwordShow ? "text" : "password"}
+                  className="login__info--input"
+                  {...register("password", { required: "Required" })}
+                  autoComplete="off"
+                />
+                {passwordShow ? (
+                  <VisibilityOffOutlinedIcon
+                    onClick={() => setPasswordShow(!passwordShow)}
+                  />
+                ) : (
+                  <VisibilityOutlinedIcon
+                    onClick={() => setPasswordShow(!passwordShow)}
+                  />
+                )}
+              </div>
+            </div>
+            <ButtonPrimary text={"sign in"} />
+          </form>
+          <span className="login__divider">Or</span>
+          <Link to="/register">
+            <ButtonSecondary text={"create account"} />
+          </Link>
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,0 +1,38 @@
+.loading {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  filter: opacity(70%);
+  z-index: 1002;
+}
+
+.loading__circle,
+.loading__logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  fill: rgb(83, 83, 201);
+  filter: opacity(100%)
+}
+
+.loading__circle {
+  height: 48px;
+  animation: animate-loading 1000ms infinite;
+}
+
+@keyframes animate-loading{
+    0%{
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    100%{
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.loading__logo {
+  height: 32px;
+}

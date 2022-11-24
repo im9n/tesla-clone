@@ -57,12 +57,22 @@
   margin-bottom: 32px;
 }
 
-.password__inputs {
+.password__inputs,
+.email__inputs {
   margin-bottom: 80px;
 }
 
 .user__change--input {
   flex-basis: 50%;
+}
+
+.name__input{
+  flex-basis: 45%;
+}
+
+.name__input:first-child{
+  margin-bottom: 16px;
+  margin-right: 16px;
 }
 
 .user__change--input > p {

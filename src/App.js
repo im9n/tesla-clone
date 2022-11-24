@@ -43,7 +43,13 @@ function App() {
         />
         <Route
           path="/teslaaccount/settings"
-          element={<Settings menuOpen={menuOpen} setMenuOpen={setMenuOpen} />}
+          element={
+            user ? (
+              <Settings menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+            ) : (
+              <Navigate to="/login" />
+            )
+          }
         />
       </Routes>
     </Router>

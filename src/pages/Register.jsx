@@ -14,11 +14,14 @@ import { useDispatch } from "react-redux";
 const Register = () => {
   const { register, handleSubmit } = useForm();
   const [passwordShow, setPasswordShow] = useState(false);
+  const [loading, setLoading] = useState(false)
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
   async function onSubmit(data) {
     try {
+      setLoading(true);
+
       const userAuth = await auth.createUserWithEmailAndPassword(
         data.email,
         data.password
@@ -36,6 +39,9 @@ const Register = () => {
           displayName: data.firstName + " " + data.lastName,
         })
       );
+
+      setLoading(false) 
+      
       navigate("/teslaaccount");
     } catch (e) {
       alert(e.message);
