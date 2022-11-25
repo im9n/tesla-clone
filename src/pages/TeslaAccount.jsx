@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Menu from "../components/Menu";
 import Nav from "../components/Nav";
 import SidebarItem from "../components/SidebarItem";
@@ -10,11 +10,20 @@ import CreditCardOutlinedIcon from "@mui/icons-material/CreditCardOutlined";
 import BoltOutlinedIcon from "@mui/icons-material/BoltOutlined";
 import { IoShirtOutline } from "react-icons/io5";
 import { BsBoxArrowRight } from "react-icons/bs";
+import { auth } from "../firebase";
+import { useDispatch } from "react-redux";
+import { logout } from "../features/userSlice";
 
 const TeslaAccount = ({ menuOpen, setMenuOpen }) => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
 
-  function signOut() {
-    console.log("signed out");
+  async function signOut() {
+    await auth.signOut();
+
+       navigate("/");
+
+    dispatch(logout());
   }
 
   return (
@@ -51,7 +60,7 @@ const TeslaAccount = ({ menuOpen, setMenuOpen }) => {
             text="sign out"
             icon={<BsBoxArrowRight />}
             cursor
-            onClick={signOut}
+            onClick={() => signOut()}
           />
         </div>
         <div className="account__content">

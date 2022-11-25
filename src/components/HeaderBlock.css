@@ -67,7 +67,7 @@
   color: #5c5e62;
 }
 
-.headerBlock__button > button {
+.headerBlock__button{
   width: 260px;
   padding: 12px 0;
   font-size: 15px;
@@ -81,11 +81,11 @@
   margin-right: 20px;
 }
 
-.headerBlock__button1 > button {
+.headerBlock__button1{
   background-color: rgba(23, 26, 32, 0.877);
   color: white;
 }
 
-.headerBlock__button2 > button {
+.headerBlock__button2{
   color: #393c41;
 }

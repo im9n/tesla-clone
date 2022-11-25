@@ -12,7 +12,6 @@ const HeaderBlock = ({ model, caption, button1, button2, imageUrl, id }) => {
   const handleScroll = () => {
     const position = window.pageYOffset;
     setScrollPosition(position);
-    console.log(position);
   };
 
   useEffect(() => {
@@ -45,13 +44,9 @@ const HeaderBlock = ({ model, caption, button1, button2, imageUrl, id }) => {
           <h4>{caption}</h4>
         </div>
         <div className="headerBlock__buttons" style={{display: 'flex', justifyContent: !button2 && 'center'}}>
-          <a href="" className="headerBlock__button headerBlock__button1" style={{margin: !button2 && '0'}}>
-            <button>{button1}</button>
-          </a>
+            <button className="headerBlock__button headerBlock__button1 not-allowed"  style={{margin: !button2 && '0'}}>{button1}</button>
           {button2 && (
-            <a href="" className="headerBlock__button headerBlock__button2">
-              <button>{button2}</button>
-            </a>
+              <button className="headerBlock__button headerBlock__button2 not-allowed">{button2}</button>
           )}
         </div>
       </div>

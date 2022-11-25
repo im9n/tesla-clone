@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   Route,
   BrowserRouter as Router,
@@ -7,7 +7,8 @@ import {
   Navigate,
 } from "react-router-dom";
 import "./App.css";
-import { selectUser } from "./features/userSlice";
+import { login, selectUser } from "./features/userSlice";
+import { auth, persistance } from "./firebase";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";

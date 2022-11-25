@@ -11,7 +11,7 @@ import { BsBoxArrowRight } from "react-icons/bs";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 import "./Settings.css";
 import { useDispatch, useSelector } from "react-redux";
-import { login, selectUser } from "../features/userSlice";
+import { login, logout, selectUser } from "../features/userSlice";
 import AddIcon from "@mui/icons-material/Add";
 import PasswordForm from "../components/PasswordForm";
 import EmailForm from "../components/EmailForm";
@@ -46,18 +46,24 @@ const Settings = ({ menuOpen, setMenuOpen }) => {
       );
 
       await user.delete();
-
-      dispatch(login(null));
-
+      
       setLoading(false);
 
-      navigate("/login");
+      dispatch(logout());
 
-      console.log(loginDetails)
+      console.log(loginDetails);
     } catch (e) {
       setLoading(false);
       alert(e.message);
     }
+  }
+
+  async function signOut(){
+    await auth.signOut();
+
+        navigate("/");
+  
+    dispatch(logout());
   }
 
   return (
@@ -110,7 +116,7 @@ const Settings = ({ menuOpen, setMenuOpen }) => {
             />
             <SidebarItem text="charging" icon={<BoltOutlinedIcon />} />
             <SidebarItem text="order history" icon={<IoShirtOutline />} />
-            <SidebarItem text="sign out" icon={<BsBoxArrowRight />} cursor />
+            <SidebarItem text="sign out" icon={<BsBoxArrowRight />} cursor onClick={() => signOut()} />
           </div>
           <div className="settings__content">
             <h1>Profile Settings</h1>
