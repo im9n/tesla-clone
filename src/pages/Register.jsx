@@ -45,6 +45,7 @@ const Register = () => {
 
       navigate("/teslaaccount");
     } catch (e) {
+      setLoading(false);
       alert(e.message);
     }
   }
