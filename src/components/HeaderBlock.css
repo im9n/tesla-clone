@@ -62,6 +62,7 @@
 }
 
 .headerBlock__info--text > h4 {
+  margin-top: 4px;
   font-size: 16px;
   font-weight: 400;
   color: #5c5e62;
