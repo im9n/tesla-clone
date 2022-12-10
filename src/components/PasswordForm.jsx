@@ -49,7 +49,7 @@ const PasswordForm = ({ setPasswordFormShow }) => {
     <>
       {loading && <Loading />}
       {!passwordChanged ? (
-        <div className="user__change" data-aos="fade-in">
+        <div className="user__change">
           <CloseIcon
             className="user__change--close"
             onClick={() => setPasswordFormShow(false)}
