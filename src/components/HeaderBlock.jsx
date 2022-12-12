@@ -9,8 +9,6 @@ const HeaderBlock = ({ model, caption, button1, button2, imageUrl, id }) => {
   const openHeight = (window.innerHeight * 0.8 + 1) * (id - 1);
   const [scrollPosition, setScrollPosition] = useState(0);
 
-  console.log(closeHeight);
-
   const handleScroll = () => {
     const position = window.pageYOffset;
     setScrollPosition(position);
